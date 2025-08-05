@@ -1,0 +1,251 @@
+/* Color Tokens Light Theme */
+:root,
+:root[data-theme='light'] {
+  --floraa-elements-borderColor: theme('colors.alpha.gray.10');
+  --floraa-elements-borderColorActive: theme('colors.accent.600');
+
+  --floraa-elements-bg-depth-1: theme('colors.white');
+  --floraa-elements-bg-depth-2: theme('colors.gray.50');
+  --floraa-elements-bg-depth-3: theme('colors.gray.200');
+  --floraa-elements-bg-depth-4: theme('colors.alpha.gray.5');
+
+  --floraa-elements-textPrimary: theme('colors.gray.950');
+  --floraa-elements-textSecondary: theme('colors.gray.600');
+  --floraa-elements-textTertiary: theme('colors.gray.500');
+
+  --floraa-elements-code-background: theme('colors.gray.100');
+  --floraa-elements-code-text: theme('colors.gray.950');
+
+  --floraa-elements-button-primary-background: theme('colors.alpha.accent.10');
+  --floraa-elements-button-primary-backgroundHover: theme('colors.alpha.accent.20');
+  --floraa-elements-button-primary-text: theme('colors.accent.500');
+
+  --floraa-elements-button-secondary-background: theme('colors.alpha.gray.5');
+  --floraa-elements-button-secondary-backgroundHover: theme('colors.alpha.gray.10');
+  --floraa-elements-button-secondary-text: theme('colors.gray.950');
+
+  --floraa-elements-button-danger-background: theme('colors.alpha.red.10');
+  --floraa-elements-button-danger-backgroundHover: theme('colors.alpha.red.20');
+  --floraa-elements-button-danger-text: theme('colors.red.500');
+
+  --floraa-elements-item-contentDefault: theme('colors.alpha.gray.50');
+  --floraa-elements-item-contentActive: theme('colors.gray.950');
+  --floraa-elements-item-contentAccent: theme('colors.accent.700');
+  --floraa-elements-item-contentDanger: theme('colors.red.500');
+  --floraa-elements-item-backgroundDefault: rgba(0, 0, 0, 0);
+  --floraa-elements-item-backgroundActive: theme('colors.alpha.gray.5');
+  --floraa-elements-item-backgroundAccent: theme('colors.alpha.accent.10');
+  --floraa-elements-item-backgroundDanger: theme('colors.alpha.red.10');
+
+  --floraa-elements-loader-background: theme('colors.alpha.gray.10');
+  --floraa-elements-loader-progress: theme('colors.accent.500');
+
+  --floraa-elements-artifacts-background: theme('colors.white');
+  --floraa-elements-artifacts-backgroundHover: theme('colors.alpha.gray.2');
+  --floraa-elements-artifacts-borderColor: var(--floraa-elements-borderColor);
+  --floraa-elements-artifacts-inlineCode-background: theme('colors.gray.100');
+  --floraa-elements-artifacts-inlineCode-text: var(--floraa-elements-textPrimary);
+
+  --floraa-elements-actions-background: theme('colors.white');
+  --floraa-elements-actions-code-background: theme('colors.gray.800');
+
+  --floraa-elements-messages-background: theme('colors.gray.100');
+  --floraa-elements-messages-linkColor: theme('colors.accent.500');
+  --floraa-elements-messages-code-background: theme('colors.gray.800');
+  --floraa-elements-messages-inlineCode-background: theme('colors.gray.200');
+  --floraa-elements-messages-inlineCode-text: theme('colors.gray.800');
+
+  --floraa-elements-icon-success: theme('colors.green.500');
+  --floraa-elements-icon-error: theme('colors.red.500');
+  --floraa-elements-icon-primary: theme('colors.gray.950');
+  --floraa-elements-icon-secondary: theme('colors.gray.600');
+  --floraa-elements-icon-tertiary: theme('colors.gray.500');
+
+  --floraa-elements-dividerColor: theme('colors.gray.100');
+
+  --floraa-elements-prompt-background: theme('colors.alpha.white.80');
+
+  --floraa-elements-sidebar-dropdownShadow: theme('colors.alpha.gray.10');
+  --floraa-elements-sidebar-buttonBackgroundDefault: theme('colors.alpha.accent.10');
+  --floraa-elements-sidebar-buttonBackgroundHover: theme('colors.alpha.accent.20');
+  --floraa-elements-sidebar-buttonText: theme('colors.accent.700');
+
+  --floraa-elements-preview-addressBar-background: theme('colors.gray.100');
+  --floraa-elements-preview-addressBar-backgroundHover: theme('colors.alpha.gray.5');
+  --floraa-elements-preview-addressBar-backgroundActive: theme('colors.white');
+  --floraa-elements-preview-addressBar-text: var(--floraa-elements-textSecondary);
+  --floraa-elements-preview-addressBar-textActive: var(--floraa-elements-textPrimary);
+
+  --floraa-elements-terminals-background: theme('colors.white');
+  --floraa-elements-terminals-buttonBackground: var(--floraa-elements-bg-depth-4);
+
+  --floraa-elements-cta-background: theme('colors.gray.100');
+  --floraa-elements-cta-text: theme('colors.gray.950');
+
+  /* Terminal Colors */
+  --bolt-terminal-background: var(--floraa-elements-terminals-background);
+  --bolt-terminal-foreground: #333333;
+  --bolt-terminal-selection-background: #00000040;
+  --bolt-terminal-black: #000000;
+  --bolt-terminal-red: #cd3131;
+  --bolt-terminal-green: #00bc00;
+  --bolt-terminal-yellow: #949800;
+  --bolt-terminal-blue: #0451a5;
+  --bolt-terminal-magenta: #bc05bc;
+  --bolt-terminal-cyan: #0598bc;
+  --bolt-terminal-white: #555555;
+  --bolt-terminal-brightBlack: #686868;
+  --bolt-terminal-brightRed: #cd3131;
+  --bolt-terminal-brightGreen: #00bc00;
+  --bolt-terminal-brightYellow: #949800;
+  --bolt-terminal-brightBlue: #0451a5;
+  --bolt-terminal-brightMagenta: #bc05bc;
+  --bolt-terminal-brightCyan: #0598bc;
+  --bolt-terminal-brightWhite: #a5a5a5;
+}
+
+/* Color Tokens Dark Theme */
+:root,
+:root[data-theme='dark'] {
+  --floraa-elements-borderColor: theme('colors.alpha.white.10');
+  --floraa-elements-borderColorActive: theme('colors.accent.500');
+
+  --floraa-elements-bg-depth-1: theme('colors.gray.950');
+  --floraa-elements-bg-depth-2: theme('colors.gray.900');
+  --floraa-elements-bg-depth-3: theme('colors.gray.800');
+  --floraa-elements-bg-depth-4: theme('colors.alpha.white.5');
+
+  --floraa-elements-textPrimary: theme('colors.white');
+  --floraa-elements-textSecondary: theme('colors.gray.400');
+  --floraa-elements-textTertiary: theme('colors.gray.500');
+
+  --floraa-elements-code-background: theme('colors.gray.800');
+  --floraa-elements-code-text: theme('colors.white');
+
+  --floraa-elements-button-primary-background: theme('colors.alpha.accent.10');
+  --floraa-elements-button-primary-backgroundHover: theme('colors.alpha.accent.20');
+  --floraa-elements-button-primary-text: theme('colors.accent.500');
+
+  --floraa-elements-button-secondary-background: theme('colors.alpha.white.5');
+  --floraa-elements-button-secondary-backgroundHover: theme('colors.alpha.white.10');
+  --floraa-elements-button-secondary-text: theme('colors.white');
+
+  --floraa-elements-button-danger-background: theme('colors.alpha.red.10');
+  --floraa-elements-button-danger-backgroundHover: theme('colors.alpha.red.20');
+  --floraa-elements-button-danger-text: theme('colors.red.500');
+
+  --floraa-elements-item-contentDefault: theme('colors.alpha.white.50');
+  --floraa-elements-item-contentActive: theme('colors.white');
+  --floraa-elements-item-contentAccent: theme('colors.accent.500');
+  --floraa-elements-item-contentDanger: theme('colors.red.500');
+  --floraa-elements-item-backgroundDefault: rgba(255, 255, 255, 0);
+  --floraa-elements-item-backgroundActive: theme('colors.alpha.white.10');
+  --floraa-elements-item-backgroundAccent: theme('colors.alpha.accent.10');
+  --floraa-elements-item-backgroundDanger: theme('colors.alpha.red.10');
+
+  --floraa-elements-loader-background: theme('colors.alpha.gray.10');
+  --floraa-elements-loader-progress: theme('colors.accent.500');
+
+  --floraa-elements-artifacts-background: theme('colors.gray.900');
+  --floraa-elements-artifacts-backgroundHover: theme('colors.alpha.white.5');
+  --floraa-elements-artifacts-borderColor: var(--floraa-elements-borderColor);
+  --floraa-elements-artifacts-inlineCode-background: theme('colors.gray.800');
+  --floraa-elements-artifacts-inlineCode-text: theme('colors.white');
+
+  --floraa-elements-actions-background: theme('colors.gray.900');
+  --floraa-elements-actions-code-background: theme('colors.gray.800');
+
+  --floraa-elements-messages-background: theme('colors.gray.800');
+  --floraa-elements-messages-linkColor: theme('colors.accent.500');
+  --floraa-elements-messages-code-background: theme('colors.gray.900');
+  --floraa-elements-messages-inlineCode-background: theme('colors.gray.700');
+  --floraa-elements-messages-inlineCode-text: var(--floraa-elements-textPrimary);
+
+  --floraa-elements-icon-success: theme('colors.green.400');
+  --floraa-elements-icon-error: theme('colors.red.400');
+  --floraa-elements-icon-primary: theme('colors.gray.950');
+  --floraa-elements-icon-secondary: theme('colors.gray.600');
+  --floraa-elements-icon-tertiary: theme('colors.gray.500');
+
+  --floraa-elements-dividerColor: theme('colors.gray.100');
+
+  --floraa-elements-prompt-background: theme('colors.alpha.gray.80');
+
+  --floraa-elements-sidebar-dropdownShadow: theme('colors.alpha.gray.30');
+  --floraa-elements-sidebar-buttonBackgroundDefault: theme('colors.alpha.accent.10');
+  --floraa-elements-sidebar-buttonBackgroundHover: theme('colors.alpha.accent.20');
+  --floraa-elements-sidebar-buttonText: theme('colors.accent.500');
+
+  --floraa-elements-preview-addressBar-background: var(--floraa-elements-bg-depth-1);
+  --floraa-elements-preview-addressBar-backgroundHover: theme('colors.alpha.white.5');
+  --floraa-elements-preview-addressBar-backgroundActive: var(--floraa-elements-bg-depth-1);
+  --floraa-elements-preview-addressBar-text: var(--floraa-elements-textSecondary);
+  --floraa-elements-preview-addressBar-textActive: var(--floraa-elements-textPrimary);
+
+  --floraa-elements-terminals-background: var(--floraa-elements-bg-depth-1);
+  --floraa-elements-terminals-buttonBackground: var(--floraa-elements-bg-depth-3);
+
+  --floraa-elements-cta-background: theme('colors.alpha.white.10');
+  --floraa-elements-cta-text: theme('colors.white');
+
+  /* Terminal Colors */
+  --bolt-terminal-background: var(--floraa-elements-terminals-background);
+  --bolt-terminal-foreground: #eff0eb;
+  --bolt-terminal-selection-background: #97979b33;
+  --bolt-terminal-black: #000000;
+  --bolt-terminal-red: #ff5c57;
+  --bolt-terminal-green: #5af78e;
+  --bolt-terminal-yellow: #f3f99d;
+  --bolt-terminal-blue: #57c7ff;
+  --bolt-terminal-magenta: #ff6ac1;
+  --bolt-terminal-cyan: #9aedfe;
+  --bolt-terminal-white: #f1f1f0;
+  --bolt-terminal-brightBlack: #686868;
+  --bolt-terminal-brightRed: #ff5c57;
+  --bolt-terminal-brightGreen: #5af78e;
+  --bolt-terminal-brightYellow: #f3f99d;
+  --bolt-terminal-brightBlue: #57c7ff;
+  --bolt-terminal-brightMagenta: #ff6ac1;
+  --bolt-terminal-brightCyan: #9aedfe;
+  --bolt-terminal-brightWhite: #f1f1f0;
+}
+
+/*
+ * Element Tokens
+ *
+ * Hierarchy: Element Token -> (Element Token | Color Tokens) -> Primitives
+ */
+:root {
+  --header-height: 54px;
+  --chat-max-width: 37rem;
+  --chat-min-width: 640px;
+  --workbench-width: min(calc(100% - var(--chat-min-width)), 1536px);
+  --workbench-inner-width: var(--workbench-width);
+  --workbench-left: calc(100% - var(--workbench-width));
+
+  /* Toasts */
+  --toastify-color-progress-success: var(--floraa-elements-icon-success);
+  --toastify-color-progress-error: var(--floraa-elements-icon-error);
+
+  /* Terminal */
+  --floraa-elements-terminal-backgroundColor: var(--bolt-terminal-background);
+  --floraa-elements-terminal-textColor: var(--bolt-terminal-foreground);
+  --floraa-elements-terminal-cursorColor: var(--bolt-terminal-foreground);
+  --floraa-elements-terminal-selection-backgroundColor: var(--bolt-terminal-selection-background);
+  --floraa-elements-terminal-color-black: var(--bolt-terminal-black);
+  --floraa-elements-terminal-color-red: var(--bolt-terminal-red);
+  --floraa-elements-terminal-color-green: var(--bolt-terminal-green);
+  --floraa-elements-terminal-color-yellow: var(--bolt-terminal-yellow);
+  --floraa-elements-terminal-color-blue: var(--bolt-terminal-blue);
+  --floraa-elements-terminal-color-magenta: var(--bolt-terminal-magenta);
+  --floraa-elements-terminal-color-cyan: var(--bolt-terminal-cyan);
+  --floraa-elements-terminal-color-white: var(--bolt-terminal-white);
+  --floraa-elements-terminal-color-brightBlack: var(--bolt-terminal-brightBlack);
+  --floraa-elements-terminal-color-brightRed: var(--bolt-terminal-brightRed);
+  --floraa-elements-terminal-color-brightGreen: var(--bolt-terminal-brightGreen);
+  --floraa-elements-terminal-color-brightYellow: var(--bolt-terminal-brightYellow);
+  --floraa-elements-terminal-color-brightBlue: var(--bolt-terminal-brightBlue);
+  --floraa-elements-terminal-color-brightMagenta: var(--bolt-terminal-brightMagenta);
+  --floraa-elements-terminal-color-brightCyan: var(--bolt-terminal-brightCyan);
+  --floraa-elements-terminal-color-brightWhite: var(--bolt-terminal-brightWhite);
+}

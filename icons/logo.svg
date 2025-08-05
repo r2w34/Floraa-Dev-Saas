@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="floraa-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9C7DFF" />
+      <stop offset="50%" stop-color="#7645E8" />
+      <stop offset="100%" stop-color="#ff74ab" />
+    </linearGradient>
+  </defs>
+  <rect width="16" height="16" rx="3" fill="url(#floraa-gradient)" />
+  <path d="M8 2.5c-1.5 0-2.5 1-2.5 2.5v1.5h1v-1.5c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5v1.5h1V5c0-1.5-1-2.5-2.5-2.5zm-3 4.5v6c0 .5.5 1 1 1h4c.5 0 1-.5 1-1V7H5zm2.5 3.5c-.3 0-.5-.2-.5-.5s.2-.5.5-.5.5.2.5.5-.2.5-.5.5z" fill="#fff" />
+</svg>
