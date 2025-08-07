@@ -48,7 +48,7 @@ export class LLMProvider {
     const config = configManager.getConfig();
     
     // Initialize OpenAI models
-    if (config.ai.providers.openai.enabled && config.ai.providers.openai.apiKey) {
+    if (config.ai.providers.openai.enabled && config.ai.providers.openai.apiKey && config.ai.providers.openai.apiKey !== 'demo_openai_key') {
       const openaiModels = ['gpt-4', 'gpt-4-turbo', 'gpt-3.5-turbo'];
       openaiModels.forEach(model => {
         this.models.set(`openai:${model}`, new ChatOpenAI({
@@ -61,7 +61,7 @@ export class LLMProvider {
     }
     
     // Initialize Anthropic models
-    if (config.ai.providers.anthropic.enabled && config.ai.providers.anthropic.apiKey) {
+    if (config.ai.providers.anthropic.enabled && config.ai.providers.anthropic.apiKey && config.ai.providers.anthropic.apiKey !== 'demo_anthropic_key') {
       const anthropicModels = ['claude-3-5-sonnet-20241022', 'claude-3-haiku-20240307'];
       anthropicModels.forEach(model => {
         this.models.set(`anthropic:${model}`, new ChatAnthropic({
@@ -74,12 +74,12 @@ export class LLMProvider {
     }
     
     // Initialize Google models
-    if (config.ai.providers.google.enabled && config.ai.providers.google.apiKey) {
+    if (config.ai.providers.google.enabled && config.ai.providers.google.apiKey && config.ai.providers.google.apiKey !== 'demo_google_key') {
       const googleModels = ['gemini-pro', 'gemini-pro-vision'];
       googleModels.forEach(model => {
         this.models.set(`google:${model}`, new ChatGoogleGenerativeAI({
           apiKey: config.ai.providers.google.apiKey,
-          modelName: model,
+          model: model,
           temperature: 0.7,
           maxOutputTokens: 4000,
         }));

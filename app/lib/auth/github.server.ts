@@ -22,41 +22,47 @@ export interface GitHubUser {
 
 export const authenticator = new Authenticator<GitHubUser>(sessionStorage);
 
-const gitHubStrategy = new GitHubStrategy(
-  {
-    clientID: process.env.GITHUB_CLIENT_ID!,
-    clientSecret: process.env.GITHUB_CLIENT_SECRET!,
-    callbackURL: process.env.GITHUB_CALLBACK_URL || 'http://localhost:5173/auth/github/callback',
-    scope: 'user:email repo read:org', // Permissions for user info, repos, and org access
-  },
-  async ({ accessToken, extraParams, profile }) => {
-    // Store the access token for later API calls
-    const user: GitHubUser = {
-      id: profile.id,
-      login: profile.login,
-      name: profile.displayName || profile.login,
-      email: profile.emails?.[0]?.value || '',
-      avatar_url: profile.photos?.[0]?.value || '',
-      bio: profile._json.bio,
-      company: profile._json.company,
-      location: profile._json.location,
-      blog: profile._json.blog,
-      twitter_username: profile._json.twitter_username,
-      public_repos: profile._json.public_repos,
-      followers: profile._json.followers,
-      following: profile._json.following,
-      created_at: profile._json.created_at,
-      access_token: accessToken,
-    };
+// Only initialize GitHub strategy if credentials are provided
+const clientID = process.env.GITHUB_CLIENT_ID;
+const clientSecret = process.env.GITHUB_CLIENT_SECRET;
 
-    // Here you would typically save the user to your database
-    // await createOrUpdateUser(user);
+if (clientID && clientSecret && clientID !== 'demo_client_id') {
+  const gitHubStrategy = new GitHubStrategy(
+    {
+      clientID,
+      clientSecret,
+      callbackURL: process.env.GITHUB_CALLBACK_URL || 'http://localhost:52993/auth/github/callback',
+      scope: 'user:email repo read:org', // Permissions for user info, repos, and org access
+    },
+    async ({ accessToken, extraParams, profile }) => {
+      // Store the access token for later API calls
+      const user: GitHubUser = {
+        id: profile.id,
+        login: profile.login,
+        name: profile.displayName || profile.login,
+        email: profile.emails?.[0]?.value || '',
+        avatar_url: profile.photos?.[0]?.value || '',
+        bio: profile._json.bio,
+        company: profile._json.company,
+        location: profile._json.location,
+        blog: profile._json.blog,
+        twitter_username: profile._json.twitter_username,
+        public_repos: profile._json.public_repos,
+        followers: profile._json.followers,
+        following: profile._json.following,
+        created_at: profile._json.created_at,
+        access_token: accessToken,
+      };
 
-    return user;
-  }
-);
+      // Here you would typically save the user to your database
+      // await createOrUpdateUser(user);
 
-authenticator.use(gitHubStrategy);
+      return user;
+    }
+  );
+
+  authenticator.use(gitHubStrategy);
+}
 
 // Helper function to get user repositories
 export async function getUserRepositories(accessToken: string, page = 1, per_page = 30) {

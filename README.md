@@ -85,21 +85,34 @@ Floraa-Dev-Saas/
 ## 🚀 Quick Start
 
 ### **Prerequisites**
-- Node.js 18+ 
-- pnpm (recommended) or npm
+- Docker and Docker Compose (recommended)
+- OR Node.js 18+ and pnpm for local development
 - GitHub account for authentication
 
-### **Installation**
+### **Docker Deployment (Recommended)**
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/Floraa-Dev-Saas.git
-cd Floraa-Dev-Saas
+git clone https://github.com/your-username/floraa-dev.git
+cd floraa-dev
 
+# Copy and configure environment variables
+cp .env.example .env.local
+# Edit .env.local with your actual API keys and configuration
+
+# Build and run production
+docker-compose --profile production up --build
+
+# OR run development mode
+docker-compose --profile development up --build
+```
+
+### **Local Development**
+```bash
 # Install dependencies
 pnpm install
 
 # Copy environment variables
-cp .env.example .env
+cp .env.example .env.local
 
 # Configure your environment (see Configuration section)
 # Add your GitHub OAuth credentials and AI API keys
@@ -109,11 +122,13 @@ pnpm dev
 ```
 
 ### **Environment Configuration**
+Create `.env.local` file with the following variables:
+
 ```bash
 # GitHub OAuth (Required)
 GITHUB_CLIENT_ID="your_github_client_id"
 GITHUB_CLIENT_SECRET="your_github_client_secret"
-GITHUB_CALLBACK_URL="http://localhost:3000/auth/github/callback"
+GITHUB_CALLBACK_URL="https://your-domain.com/auth/github/callback"
 
 # AI Providers (At least one required)
 OPENAI_API_KEY="your_openai_api_key"
@@ -123,8 +138,11 @@ GOOGLE_GENERATIVE_AI_API_KEY="your_google_ai_api_key"
 # Database (Required for production)
 DATABASE_URL="postgresql://username:password@localhost:5432/floraa_dev"
 
-# Session Security (Required)
-SESSION_SECRET="your_secure_session_secret"
+# Session Security (Required - generate a secure random string)
+SESSION_SECRET="your_secure_session_secret_min_32_chars"
+
+# Environment
+NODE_ENV="production"
 ```
 
 ## 🎯 Usage
@@ -208,13 +226,21 @@ Comprehensive documentation is available in the [`Master-Docs/`](./Master-Docs/)
 
 ### **Build & Deploy**
 ```bash
-# Development
+# Development (local)
 pnpm dev
 
 # Build for production
 pnpm build
 
-# Deploy to Cloudflare
+# Docker builds
+pnpm dockerbuild:prod    # Production image
+pnpm dockerbuild         # Development image
+
+# Docker Compose
+docker-compose --profile production up --build    # Production
+docker-compose --profile development up --build   # Development
+
+# Deploy to Cloudflare (optional)
 pnpm deploy
 
 # Run tests

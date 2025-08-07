@@ -2,9 +2,6 @@ import type { AppLoadContext, EntryContext } from '@remix-run/cloudflare';
 import { RemixServer } from '@remix-run/react';
 import { isbot } from 'isbot';
 import { renderToReadableStream } from 'react-dom/server';
-import { renderHeadToString } from 'remix-island';
-import { Head } from './root';
-import { themeStore } from '~/lib/stores/theme';
 import { initializeModelList } from '~/utils/constants';
 
 export default async function handleRequest(
@@ -26,12 +23,10 @@ export default async function handleRequest(
 
   const body = new ReadableStream({
     start(controller) {
-      const head = renderHeadToString({ request, remixContext, Head });
-
       controller.enqueue(
         new Uint8Array(
           new TextEncoder().encode(
-            `<!DOCTYPE html><html lang="en" data-theme="${themeStore.value}"><head>${head}</head><body><div id="root" class="w-full h-full">`,
+            `<!DOCTYPE html><html lang="en" data-theme="dark"><head></head><body><div id="root" class="w-full h-full">`,
           ),
         ),
       );
