@@ -133,7 +133,7 @@ server {
     ssl_certificate_key /path/to/your/private.key;
 
     location / {
-        proxy_pass http://localhost:5173;
+        proxy_pass http://localhost:7000;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -156,7 +156,7 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.floraa.rule=Host(`your-domain.com`)"
       - "traefik.http.routers.floraa.tls.certresolver=letsencrypt"
-      - "traefik.http.services.floraa.loadbalancer.server.port=5173"
+      - "traefik.http.services.floraa.loadbalancer.server.port=7000"
 ```
 
 ## 📊 Monitoring & Logging
@@ -169,7 +169,7 @@ services:
   floraa-prod:
     # ... existing config
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5173/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:7000/health"]
       interval: 30s
       timeout: 10s
       retries: 3

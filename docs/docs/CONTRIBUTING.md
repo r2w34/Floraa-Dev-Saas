@@ -172,10 +172,10 @@ After building using any of the methods above, run the container with:
 
 ```bash
 # Development
-docker run -p 5173:5173 --env-file .env.local bolt-ai:development
+docker run -p 7000:7000 --env-file .env.local bolt-ai:development
 
 # Production
-docker run -p 5173:5173 --env-file .env.local bolt-ai:production
+docker run -p 7000:7000 --env-file .env.local bolt-ai:production
 ```
 
 ## Deployment with Coolify
@@ -212,7 +212,7 @@ Ensure you have the appropriate `.env.local` file configured before running the 
 
 ## Notes
 
-- Port 5173 is exposed and mapped for both development and production environments
+- Port 7000 is exposed and mapped for both development and production environments
 - Environment variables are loaded from `.env.local`
 - Different profiles (development/production) can be used for different deployment scenarios
 - The configuration supports both local development and production deployment

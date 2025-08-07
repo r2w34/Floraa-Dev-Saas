@@ -5,7 +5,7 @@ export const ConfigSchema = z.object({
   // Application Settings
   app: z.object({
     name: z.string().default('Floraa.dev'),
-    url: z.string().url().default('http://localhost:5173'),
+    url: z.string().url().default('http://localhost:7000'),
     description: z.string().default('AI-powered web development platform'),
     logo: z.string().url().optional(),
     favicon: z.string().url().optional(),
@@ -106,7 +106,7 @@ export const ConfigSchema = z.object({
     }),
     cors: z.object({
       enabled: z.boolean().default(true),
-      origins: z.array(z.string()).default(['http://localhost:3000', 'http://localhost:5173']),
+      origins: z.array(z.string()).default(['http://localhost:3000', 'http://localhost:7000']),
     }),
     twoFactor: z.object({
       enabled: z.boolean().default(true),
@@ -188,7 +188,7 @@ class ConfigManager {
     const envConfig = {
       app: {
         name: process.env.APP_NAME || 'Floraa.dev',
-        url: process.env.APP_URL || 'http://localhost:5173',
+        url: process.env.APP_URL || 'http://localhost:7000',
         description: process.env.APP_DESCRIPTION || 'AI-powered web development platform',
         maintenanceMode: process.env.MAINTENANCE_MODE === 'true',
         maintenanceMessage: process.env.MAINTENANCE_MESSAGE || 'We are currently performing maintenance. Please check back soon.',
@@ -270,7 +270,7 @@ class ConfigManager {
         },
         cors: {
           enabled: process.env.ENABLE_CORS !== 'false',
-          origins: process.env.CORS_ORIGIN?.split(',') || ['http://localhost:3000', 'http://localhost:5173'],
+          origins: process.env.CORS_ORIGIN?.split(',') || ['http://localhost:3000', 'http://localhost:7000'],
         },
         twoFactor: {
           enabled: process.env.ENABLE_2FA !== 'false',

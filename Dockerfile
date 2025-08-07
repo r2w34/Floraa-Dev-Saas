@@ -15,7 +15,7 @@ RUN pnpm install --frozen-lockfile
 COPY . .
 
 # Expose the port the app runs on
-EXPOSE 5173
+EXPOSE 7000
 
 # Production image
 FROM base AS floraa-production
