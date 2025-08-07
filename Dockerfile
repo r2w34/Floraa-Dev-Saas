@@ -3,10 +3,13 @@ FROM ${BASE} AS base
 
 WORKDIR /app
 
+# Install pnpm directly to avoid corepack signature issues
+RUN npm install -g pnpm@latest
+
 # Install dependencies (this step is cached as long as the dependencies don't change)
 COPY package.json pnpm-lock.yaml ./
 
-RUN corepack enable pnpm && pnpm install
+RUN pnpm install --frozen-lockfile
 
 # Copy the rest of your app's source code
 COPY . .
